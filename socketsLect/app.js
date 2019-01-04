@@ -29,7 +29,7 @@ io.on('connection', socket => {
     });
 
     socket.on('sendMsg',text => {
-        io.emit('msg', text.txt)
+        io.emit('msg', text)
     })
 });
 

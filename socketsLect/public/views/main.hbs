@@ -10,7 +10,7 @@
 <body>
 
 <form action="">
-    <input type="text" id="txt" value="">
+    <input type="text" id="txt" value="test">
     <button id="btn">OK</button>
 </form>
 
@@ -20,7 +20,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
 <script>
 
-    let txt = document.getElementById('txt');
+    let txt = document.getElementById('txt').value;
     console.log(txt);
     let btn = document.getElementById('btn');
     const socket = io();
