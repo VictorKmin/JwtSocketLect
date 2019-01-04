@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<form action="">
+    <input type="text" id="txt" value="">
+    <button id="btn">OK</button>
+</form>
+
+
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+<script>
+
+    let txt = document.getElementById('txt');
+    console.log(txt);
+    let btn = document.getElementById('btn');
+    const socket = io();
+
+    btn.onclick = function (ev) {
+        ev.preventDefault()
+        socket.emit('sendMsg', txt)
+        socket.on('msg', text => {
+            console.log(text);
+        })
+    }
+</script>
+
+
+</body>
+</html>
